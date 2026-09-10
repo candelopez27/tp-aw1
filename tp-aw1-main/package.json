@@ -1,0 +1,15 @@
+{
+  "name": "tp-aw1-main",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "five-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "five-server": "^0.5.0"
+  }
+}
