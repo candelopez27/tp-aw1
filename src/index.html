@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,7 @@
 </head>
 <body>
     <header>
-        <img src="./recursos/imagenes/logo.png" alt="Logo de mola eventos">
+        <img src="./recursos/imagenes/logo.png" alt="Logo de mola eventos" width="100">
         <nav>
             <ul>
                 <li><a href="./index.html">Inicio</a></li>
@@ -16,16 +16,67 @@
                 <li><a href="./sobre-nosotros.html">Sobre nosotros</a></li>
                 <li><a href="./contacto.html">Contacto</a></li>
             </ul>
-            <img src="./recursos/imagenes/carrito-de-compras.png" alt="">
-            <button href="./catalogo.html">Ver catálogo</button>
+            <a href="./carrito.html" aria-label="Carrito de compras, 2 productos">
+                <img src="./recursos/imagenes/carrito-de-compras.png" width="50"></a>
+            <a href="./catalogo.html">Ver catálogo</a>
+            <a href="./contacto.html">Solicitar cotización</a>
         </nav>
     </header>
     <main>
-        <section></section>
-
+        <section>
+            <h1>Mobiliario que transforma tus eventos</h1>
+            <p>Alquilá mobiliario, gazebos, carpas y más para crear eventos únicos e inolvidables. Aportamos diseño y calidez a cada espacio</p>
+        </section>
+        <section>
+            <h2>Encontrá lo que necesitás para tu evento</h2>
+            <div>
+                <a href="">
+                    <div>
+                        <img src="./recursos/imagenes/seccion-categorias/mesa.jpg" alt="Mesa con sillas" width="200" height="150">
+                        <h3>Mesas</h3>
+                    </div>
+                </a>    
+                <div>
+                    <img src="./recursos/imagenes/seccion-categorias/silla.jpg" alt="sillas con mesa altas tipo industriales" width="200" height="150">
+                    <h3>Sillas</h3>
+                </div>
+                <div>
+                    <img src="./recursos/imagenes/seccion-categorias/living.jpg" alt="Juego de livings" width="200" height="150">
+                    <h3>Livings</h3>
+                </div>
+                <div>
+                    <img src="./recursos/imagenes/seccion-categorias/gazebo.jpg" alt="gazebo blanco" width="200" height="150">
+                    <h3>Gazebos</h3>
+                </div>
+                <div>
+                    <img src="./recursos/imagenes/seccion-categorias/carpa.jpg" alt="carpa blanca" width="200" height="150">
+                    <h3>Carpas</h3>
+                </div>
+            </div>
+    </section>
     </main>
     <footer>
-
+        <!--Columna 1: logo y copyrigth-->
+        <div>
+            <img src="./recursos/imagenes/logo.png" alt="logo de mola, solo letras" width="100">
+            <p> &copy; 2026 Mola Eventos. Todos los derechos reservados.</p>
+        </div>
+        <!--Columna 2: Navegacion-->
+        <div>
+            <h3>Navegación</h3>
+            <ul>
+                <li><a href=></a>Inicio</li>
+                <li><a href="./catalogo.html"></a>Catálogo</li>
+                <li><a href="./servicios.html"></a>Servicios</li>
+                <li><a href="./sobre-nosotros.html"></a>Sobre nosotros</li>
+            </ul>
+        </div>
+        <!--Columna 3: contacto-->
+        <div>
+            <h3>Contacto</h3>
+            <a href="contacto.html">Contacto</a>
+            <p>Córdoba, Argentina</p>
+        </div>
     </footer>
 </body>
 </html>
