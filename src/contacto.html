@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Mola Eventos</title>
+</head>
+<body>
+    <header>
+        <img src="./recursos/imagenes/logo.png" alt="Logo Mola Eventos" width="100">
+        <nav>
+            <ul>
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./catalogo.html">Catálogo</a></li>
+                <li><a href="./servicios.html">Servicios</a></li>
+                <li><a href="./sobre-nosotros.html">Sobre nosotros</a></li>
+                <li><a href="./contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- NAVEGACIÓN -->
+        <nav>
+            <p><small>INICIO / CONTACTO</small></p>
+        </nav>
+
+        <header class="encabezado-contacto">
+            <small>ATENCIÓN & ASESORÍA</small>
+            <h1>Contacto</h1>
+            <p>Ponete en contacto con nosotros para asesorarte sobre tu evento. Creamos puestas en escena exclusivas con curaduría y dedicación absoluta.</p>
+        </header>
+
+        <div class="grid-contacto">
+            <!-- COLUMNA IZQUIERDA: CANALES-->
+            <aside class="columna-info-contacto">
+                <section class="card-canales">
+                    <small>MOLA CONCIERGE</small>
+                    <h2>Canales de atención directa</h2>
+                  
+                        <div class="canal-item">
+                            <div>
+                                <h4>TELÉFONO & WHATSAPP</h4>
+                                <a href="tel:+543511334567">+54 351 133 4567</a>
+                                <a href="https://wa.me/543511334567" class="link-wa">ESCRIBIR POR WHATSAPP →</a>
+                            </div>
+                        </div>
+
+                        <div class="canal-item">
+                            <div>
+                                <h4>CORREO ELECTRÓNICO</h4>
+                                <a href="mailto:hola@molaeventos.com.ar">hola@molaeventos.com.ar</a>
+                                <p><small>Atención corporativa y particulares</small></p>
+                            </div>
+                        </div>
+
+                        <div class="canal-item">
+                            <div>
+                                <h4>ÁREA DE COBERTURA</h4>
+                                <p>Córdoba Capital, Sierras Chicas y alrededores, Argentina</p>
+                            </div>
+                        </div>
+
+                        <div class="canal-item">
+                            <div>
+                                <h4>HORARIO DE ATENCIÓN</h4>
+                                <p><strong>Lunes a Viernes de 9:00 a 19:00 hs</strong></p>
+                                <p><small>Sábados de 9:00 a 13:00 hs</small></p>
+                            </div>
+                        </div>
+
+                    <div class="bloque-asesoria">
+                        <h4>Asesoramiento Personalizado</h4>
+                        <p>Acompañamos a wedding planners, empresas y particulares con planos de distribución, selección curada de texturas y logística integral.</p>
+                    </div>
+                </section>
+            </aside>
+
+            <!-- COLUMNA DERECHA: FORMULARIO DETALLADO -->
+            <section class="columna-formulario">
+                <small>INICIEMOS LA CONVERSACIÓN</small>
+                <h2>Envianos tu consulta</h2>
+                <p>Completá los datos clave y un asesor de Mola Eventos te contactará con una propuesta personalizada.</p>
+
+                <form action="" method="post">
+                    <div>
+                        <label for="id-nombre-contacto">NOMBRE Y APELLIDO *</label>
+                        <input type="text" id="id-nombre-contacto" name="nombre" placeholder="Ej. Camila Soler" required>
+                    </div>
+
+                    <div>
+                        <label for="id-email-contacto">CORREO ELECTRÓNICO *</label>
+                        <input type="email" id="id-email-contacto" name="email" placeholder="tu@email.com" required>
+                    </div>
+
+                    <div>
+                        <label for="id-tel-contacto">TELÉFONO / WHATSAPP *</label>
+                        <input type="tel" id="id-tel-contacto" name="telefono" placeholder="+54 9 351 ..." required>
+                    </div>
+
+                    <div>
+                        <label for="id-tipo">TIPO DE EVENTO *</label>
+                        <select id="id-tipo" name="tipo-evento" required>
+                            <option value="" disabled selected>Seleccioná una opción</option>
+                            <option value="social">Social</option>
+                            <option value="corporativo">Corporativo</option>
+                            <option value="infantil">Infantil</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="id-fecha-estimada">FECHA ESTIMADA DEL EVENTO</label>
+                        <input type="date" id="id-fecha-estimada" name="fecha-estimada">
+                    </div>
+
+                    <div>
+                        <label for="id-invitados">INVITADOS ESTIMADOS (APROX.)</label>
+                        <input type="number" id="id-invitados" name="invitados" placeholder="Ej. 120 personas">
+                    </div>
+
+                    <div>
+                        <label for="id-mensaje-detalle">MENSAJE O CONSULTA DETALLADA *</label>
+                        <textarea id="id-mensaje-detalle" name="mensaje" rows="4" required placeholder="Contanos fecha tentativa, lugar, cantidad estimada de invitados, estilo de mobiliario deseado o dudas específicas..."></textarea>
+                    </div>
+
+                    <button type="submit">ENVIAR CONSULTA →</button>
+                    <p><small>🔒 Respondemos en menos de 24 horas hábiles. Tu información está estrictamente protegida.</small></p>
+                </form>
+            </section>
+        </div>
+
+        <!-- SECCIÓN INFERIOR: TARJETAS DE GARANTÍA Y SERVICIOS -->
+        <section class="tarjetas-garantia">
+            <article>
+                <small>GARANTÍA DE SERVICIO</small>
+                <h3>Logística puntual y montaje cuidado</h3>
+                <p>Nos encargamos del traslado, descarga, armado y retiro de cada pieza con equipo técnico calificado para preservar la integridad de cada locación.</p>
+            </article>
+
+            <article>
+                <small>PROCESO DE RESERVA</small>
+                <h3>Cotizaciones detalladas en 24h</h3>
+                <p>Recibirás un presupuesto formal desglosado con fotos de los elementos, disponibilidad en calendario y términos claros sin sorpresas.</p>
+            </article>
+
+            <article>
+                <small>ATENCIÓN TELÉFONICA</small>
+                <h3>¿Tenés un evento urgente?</h3>
+                <p>Si tu fecha es dentro de los próximos 7 días, contactanos directamente por WhatsApp para chequear disponibilidad de stock en tiempo real.</p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <!--Columna 1: logo y copyrigth-->
+        <div>
+            <img src="./recursos/imagenes/logo.png" alt="logo de mola, solo letras" width="100">
+            <p> &copy; 2026 Mola Eventos. Todos los derechos reservados.</p>
+        </div>
+        <!--Columna 2: Navegacion-->
+        <div>
+            <h3>Navegación</h3>
+            <ul>
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./catalogo.html">Catálogo</a></li>
+                <li><a href="./servicios.html">Servicios</a></li>
+                <li><a href="./sobre-nosotros.html">Sobre nosotros</a></li>
+            </ul>
+        </div>
+        <!--Columna 3: contacto-->
+        <div>
+            <h3>Contacto</h3>
+            <a href="contacto.html">Contacto</a>
+            <p>3517027534</p>
+            <p>Córdoba, Argentina</p>
+        </div>
+    </footer>
+</body>
+</html>

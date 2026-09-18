@@ -31,36 +31,38 @@
             <input type="search" name="que-estas-buscando" id="id-filtro-superior">
         </form>
         <!--BARRA LATERAL O SIDEBAR-->
-        <!--Categorias-->
-        <nav>
-        <h3>CATEGORÍAS</h3>
-        <ul>
-            <li><button type="button">Todas</button></li>
-            <li><button type="button">Mesas</button></li>
-            <li><button type="button">Sillas</button></li>
-            <li><button type="button">Livings</button></li>
-            <li><button type="button">Gazebos</button></li>
-            <li><button type="button">Carpas</button></li>
-            <li><button type="button">Iluminación</button></li>
-            <li><button type="button">Set de almohadones</button></li>
-            <li><button type="button">Estufas</button></li>
-        </ul>
-        </nav>
-        <!--Filtros-->
-        <form action="" method="get">
-        <h3>FILTROS</h3>
-            <h4>Precio</h4>
-            <input type="number" name="precio min" id="id-precio-min">
-            <input type="number" name="precio max" id="id-precio-max">
-            <h4>Tipo de evento</h4>
-            <label for="id-tipo-social">Social</label>
-            <input type="checkbox" name="social" id="id-tipo-social"> 
-            <label for="id-tipo-corporativo">Corporativo</label>
-            <input type="checkbox" name="corporativo" id="id-tipo-corporativo">
-            <label for="id-tipo-infantil">Infantil</label>
-            <input type="checkbox" name="infantil" id="id-tipo-infantil">
-            <button type="reset">Limpiar filtros</button>
-        </form>
+        <aside>
+            <!--Categorias-->
+            <nav>
+            <h3>CATEGORÍAS</h3>
+            <ul>
+                <li><button type="button">Todas</button></li>
+                <li><button type="button">Mesas</button></li>
+                <li><button type="button">Sillas</button></li>
+                <li><button type="button">Livings</button></li>
+                <li><button type="button">Gazebos</button></li>
+                <li><button type="button">Carpas</button></li>
+                <li><button type="button">Iluminación</button></li>
+                <li><button type="button">Set de almohadones</button></li>
+                <li><button type="button">Estufas</button></li>
+            </ul>
+            </nav>
+            <!--Filtros-->
+            <form action="" method="get">
+            <h3>FILTROS</h3>
+                <h4>Precio</h4>
+                <input type="number" name="precio min" id="id-precio-min">
+                <input type="number" name="precio max" id="id-precio-max">
+                <h4>Tipo de evento</h4>
+                <label for="id-tipo-social">Social</label>
+                <input type="checkbox" name="social" id="id-tipo-social"> 
+                <label for="id-tipo-corporativo">Corporativo</label>
+                <input type="checkbox" name="corporativo" id="id-tipo-corporativo">
+                <label for="id-tipo-infantil">Infantil</label>
+                <input type="checkbox" name="infantil" id="id-tipo-infantil">
+                <button type="reset">Limpiar filtros</button>
+            </form>
+        </aside>
         <section class="grilla-productos">
             <article class="producto-card"> 
                 <div class="carrusel-fotos">
@@ -137,8 +139,56 @@
                     <button type="submit">Agregar</button>
                 </form>
             </article>
+            <article class="producto-card"> 
+                <div class="carrusel-fotos">
+                    <div class="visor-imagen">
+                        <img src="./recursos/imagenes/grilla-productos/Juego de Living Premium – Capacidad 12 personas.jpg" alt="Vista general del Juego de Living premium" width="300">
+                    </div>
+
+                    <!-- Botones flechas PARA EL CARRUSEL -->
+                    <button type="button" class="btn-carrusel prev" aria-label="Imagen anterior">❮</button>
+                    <button type="button" class="btn-carrusel next" aria-label="Siguiente imagen">❯</button>
+
+                    <div class="fotos">
+                        <img src="./recursos/imagenes/grilla-productos/Juego de Living Premium – Capacidad 12 personas 2.jpg" alt="Foto del juego de living premium" width="300">
+                    </div>
+                </div>
+                <h2>Juego de Living Premium – Capacidad 12 personas</h2>
+                <p class="precio">$ 48.000,00</p>
+
+                <div class="descripcion-producto">
+                    <p><strong>Incluye:</strong></p>
+                    <ul>
+                        <li>2 sillones de 1,30 m con respaldo (3 personas cada uno)</li>
+                        <li>2 sillones de 1,30 m sin respaldo (3 personas cada uno)</li>
+                        <li>1 mesa de 0,80 x 0,80 m</li>
+                        <li>Almohadones en bases y respaldos.</li>
+                        <li>Camino y centro de mesa decorativo.</li>
+                    </ul>
+                    <p><strong>No incluye:</strong> traslado ni armado.</p>
+                </div>
+
+                <form action="" method="post">
+                    <button type="button">-</button>
+                    <input type="number" name="cantidad" value="1" min="1">
+                    <button type="button">+</button>
+                    <button type="submit">Agregar</button>
+                </form>
+            </article>
         </section>
         <!-- BARRA DERECHA - Carrito-->
+        <aside class="carrito-sidebar">
+            <h2>Tu pedido (3)</h2>
+            <!-- Lista de ítems seleccionados -->
+            <ul>
+                <li>
+                    <h4>Juego de Living Premium</h4>
+                    <p>5 u. - $ 240.000</p>
+                </li>
+            </ul>
+            <p>Subtotal: $ 240.000</p>
+            <button type="button">Ver pedido</button>
+        </aside>
     </main>
     <footer>
         <!--Columna 1: logo y copyrigth-->
