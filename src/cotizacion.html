@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotización | Mola Eventos</title>
+</head>
+<body>
+    <header>
+        <img src="./recursos/imagenes/logo.png" alt="Logo de mola eventos" width="100">
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./catalogo.html">Catálogo</a></li>
+                <li><a href="./servicios.html">Servicios</a></li>
+                <li><a href="./sobre-nosotros.html">Sobre nosotros</a></li>
+                <li><a href="./contacto.html">Contacto</a></li>
+            </ul>
+            <a href="./cotizacion.html" aria-label="Ver carrito de compras">
+                <img src="./recursos/imagenes/carrito-de-compras.png" alt="" width="50">
+            </a>
+            <a href="./catalogo.html">Ver catálogo</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- NAVEGACIÓN -->
+        <nav aria-label="Ruta de navegación">
+            <p><small>INICIO / CATÁLOGO / COTIZACIÓN</small></p>
+        </nav>
+
+        <header class="encabezado-cotizacion">
+            <h1>Tu pedido</h1>
+            <p>Revisá los productos y completá los datos para solicitar tu cotización.</p>
+        </header>
+
+        <!-- FORMULARIO GLOBAL DE COTIZACIÓN -->
+        <form action="" method="post" id="form-cotizacion">
+
+            <!-- SECCIÓN IZQUIERDA: PRODUCTOS Y DATOS -->
+            <div class="columna-principal">
+
+                <!-- Productos Seleccionados -->
+                <fieldset class="productos-seleccionados">
+                    <legend>Productos seleccionados</legend>
+
+                    <ul class="lista-carrito">
+                        <!-- Producto 1 -->
+                        <li class="item-carrito">
+                            <img src="./recursos/imagenes/grilla-productos/Juego de Living Estándar Capacidad 10 personas 2.jpg"
+                                 alt="Juego de Living Estándar" width="80">
+                            <h3>Juego de Living Estándar Capacidad 10 personas</h3>
+                            <div class="control-cantidad">
+                                <button type="button" aria-label="Restar cantidad de Juego de Living Estándar">-</button>
+                                <label for="id-cant-living-estandar" class="sr-only">Cantidad de Juego de Living Estándar</label>
+                                <input type="number" id="id-cant-living-estandar" name="cant-living-estandar" value="1" min="1">
+                                <button type="button" aria-label="Sumar cantidad de Juego de Living Estándar">+</button>
+                            </div>
+                            <span class="precio-unitario">$ 36.000</span>
+                            <span class="precio-subtotal">$ 36.000</span>
+                            <button type="button" class="btn-eliminar" aria-label="Eliminar Juego de Living Estándar del pedido">
+                            </button>
+                        </li>
+
+                        <!-- Producto 2 -->
+                        <li class="item-carrito">
+                            <img src="./recursos/imagenes/grilla-productos/Livings Confort.jpg"
+                                 alt="Juego de Livings Confort" width="80">
+                            <h3>Juego de Livings Confort Capacidad 10 personas</h3>
+                            <div class="control-cantidad">
+                                <button type="button" aria-label="Restar cantidad de Juego de Livings Confort">-</button>
+                                <label for="id-cant-livings-confort" class="sr-only">Cantidad de Juego de Livings Confort</label>
+                                <input type="number" id="id-cant-livings-confort" name="cant-livings-confort" value="1" min="1">
+                                <button type="button" aria-label="Sumar cantidad de Juego de Livings Confort">+</button>
+                            </div>
+                            <span class="precio-unitario">$ 42.000</span>
+                            <span class="precio-subtotal">$ 42.000</span>
+                            <button type="button" class="btn-eliminar" aria-label="Eliminar Juego de Livings Confort del pedido">
+                            </button>
+                        </li>
+
+                        <!-- Producto 3 -->
+                        <li class="item-carrito">
+                            <img src="./recursos/imagenes/grilla-productos/Juego de Living Premium – Capacidad 12 personas.jpg"
+                                 alt="Juego de Living Premium" width="80">
+                            <h3>Juego de Living Premium Capacidad 12 personas</h3>
+                            <div class="control-cantidad">
+                                <button type="button" aria-label="Restar cantidad de Juego de Living Premium">-</button>
+                                <label for="id-cant-living-premium" class="sr-only">Cantidad de Juego de Living Premium</label>
+                                <input type="number" id="id-cant-living-premium" name="cant-living-premium" value="1" min="1">
+                                <button type="button" aria-label="Sumar cantidad de Juego de Living Premium">+</button>
+                            </div>
+                            <span class="precio-unitario">$ 48.000</span>
+                            <span class="precio-subtotal">$ 48.000</span>
+                            <button type="button" class="btn-eliminar" aria-label="Eliminar Juego de Living Premium del pedido">
+                            </button>
+                        </li>
+                    </ul>
+                </fieldset>
+
+                <!-- Datos del evento y adicionales -->
+                <div class="bloque-inferior-grid">
+                    <fieldset class="datos-evento">
+                        <legend>Datos del evento</legend>
+
+                        <div>
+                            <label for="id-nombre-cotizacion">Nombre y apellido *</label>
+                            <input type="text" id="id-nombre-cotizacion" name="nombre" value="Valentina Giménez" required>
+                        </div>
+
+                        <div>
+                            <label for="id-telefono-cotizacion">Teléfono *</label>
+                            <input type="tel" id="id-telefono-cotizacion" name="telefono" value="3511234567" required>
+                        </div>
+
+                        <div>
+                            <label for="id-email-cotizacion">Email *</label>
+                            <input type="email" id="id-email-cotizacion" name="email" value="valentina@ejemplo.com" required>
+                        </div>
+
+                        <div class="grupo-inline">
+                            <div>
+                                <label for="id-fecha-cotizacion">Fecha del evento *</label>
+                                <input type="date" id="id-fecha-cotizacion" name="fecha-evento" value="2026-05-25" required>
+                            </div>
+                            <div>
+                                <label for="id-hora-cotizacion">Hora del evento *</label>
+                                <input type="time" id="id-hora-cotizacion" name="hora-evento" value="19:00" required>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="id-direccion-cotizacion">Dirección del evento *</label>
+                            <input type="text" id="id-direccion-cotizacion" name="direccion" value="Av. Colón 1234" required>
+                        </div>
+
+                        <div>
+                            <label for="id-localidad-cotizacion">Localidad *</label>
+                            <input type="text" id="id-localidad-cotizacion" name="localidad" value="Córdoba" required>
+                        </div>
+                    </fieldset>
+
+                    <div class="columna-servicios-obs">
+                        <fieldset class="servicios-adicionales">
+                            <legend>Servicios adicionales</legend>
+
+                            <label>
+                                <input type="checkbox" name="servicio-flete" checked> Flete
+                            </label>
+                            <label>
+                                <input type="checkbox" name="servicio-armado" checked> Armado
+                            </label>
+                            <label>
+                                <input type="checkbox" name="servicio-desarmado" checked> Desarmado
+                            </label>
+                        </fieldset>
+
+                        <fieldset class="observaciones">
+                            <legend>Observaciones</legend>
+                            <label for="id-observaciones-cotizacion" class="sr-only">Observaciones</label>
+                            <textarea id="id-observaciones-cotizacion" name="observaciones" placeholder="Contanos si necesitás algo más..."></textarea>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN DERECHA: RESUMEN DEL PEDIDO -->
+            <aside class="resumen-pedido" aria-labelledby="id-titulo-resumen">
+                <h2 id="id-titulo-resumen">Resumen del pedido</h2>
+
+                <dl class="desglose-precios">
+                    <div>
+                        <dt>Productos</dt>
+                        <dd>$ 126.000</dd>
+                    </div>
+                    <div>
+                        <dt>Flete</dt>
+                        <dd>$ 15.000</dd>
+                    </div>
+                    <div>
+                        <dt>Armado</dt>
+                        <dd>$ 12.000</dd>
+                    </div>
+                    <div>
+                        <dt>Desarmado</dt>
+                        <dd>$ 10.000</dd>
+                    </div>
+                </dl>
+
+                <div class="total-destacado">
+                    <small>TOTAL ESTIMADO</small>
+                    <p class="monto">$ 163.000</p>
+                </div>
+
+                <p class="aclaracion-legal">
+                    * El precio final será confirmado por Mola Eventos según disponibilidad y características del evento.
+                </p>
+
+                <button type="submit" class="btn-cotizar">SOLICITAR COTIZACIÓN</button>
+
+                <p class="seguridad"><small>Tu información está protegida.</small></p>
+            </aside>
+        </form>
+    </main>
+
+    <footer>
+        <div>
+            <img src="./recursos/imagenes/logo.png" alt="logo de mola, solo letras" width="100">
+            <p>&copy; 2026 Mola Eventos. Todos los derechos reservados.</p>
+        </div>
+        <div>
+            <h3>Navegación</h3>
+            <ul>
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./catalogo.html">Catálogo</a></li>
+                <li><a href="./servicios.html">Servicios</a></li>
+                <li><a href="./sobre-nosotros.html">Sobre nosotros</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Contacto</h3>
+            <a href="./contacto.html">Contacto</a>
+            <p>3517027534</p>
+            <p>Córdoba, Argentina</p>
+        </div>
+    </footer>
+</body>
+</html>
