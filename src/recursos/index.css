@@ -1,0 +1,182 @@
+/* =========================================================
+   INDEX.CSS — estilos propios de la página de inicio
+   (requiere cargar base.css antes)
+   ========================================================= */
+
+/* ===== Hero ===== */
+.hero {
+    min-height: 600px;
+    height: 80vh;
+    display: flex;
+    align-items: flex-end;
+    background:
+        linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)),
+        url("../recursos/imagenes/hero.jpg") center / cover no-repeat,
+        #0a0804;
+}
+
+.hero-contenido {
+    width: 100%;
+    max-width: var(--ancho-max);
+    margin: 0 auto;
+    padding: 0 var(--md) var(--xl);
+    color: var(--blanco);
+}
+
+.hero h1 {
+    font-size: 32px;
+    max-width: 672px;
+    margin-bottom: 24px;
+}
+
+.hero p {
+    max-width: 512px;
+    margin-bottom: 32px;
+    opacity: 0.9;
+}
+
+.hero-botones {
+    display: flex;
+    flex-direction: column;
+    gap: var(--md);
+}
+
+/* ===== Categorías ===== */
+.categorias {
+    display: flex;
+    gap: var(--md);
+    overflow-x: auto;
+    padding-bottom: var(--md);
+}
+
+.categorias li {
+    flex: none;
+    width: 160px;
+}
+
+.categorias img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    background: var(--superficie-alta);
+    border-radius: 2px;
+    margin-bottom: var(--md);
+}
+
+.categorias h3 {
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    text-align: center;
+    color: var(--primario);
+}
+
+.categorias a:hover h3 {
+    color: var(--secundario);
+}
+
+/* ===== Servicios ===== */
+.servicios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--xl) var(--md);
+    text-align: center;
+}
+
+.servicios li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circulo-icono {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(228, 192, 156, 0.2);
+    color: var(--secundario);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--md);
+}
+
+.servicios h3 {
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+}
+
+.servicios p {
+    font-size: 14px;
+    color: var(--texto-suave);
+}
+
+/* ===== Sobre nosotros (bloque del inicio) ===== */
+.sobre-nosotros {
+    max-width: var(--ancho-max);
+    margin: 0 auto;
+    padding: var(--xxl) var(--md);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--xl);
+    align-items: center;
+    background: var(--superficie);
+}
+
+.sobre-texto h2 {
+    font-size: 32px;
+    color: var(--primario);
+    margin-bottom: 24px;
+}
+
+.sobre-texto p {
+    max-width: 512px;
+    color: var(--texto-suave);
+    margin-bottom: 32px;
+}
+
+.sobre-imagen {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 2px;
+    order: -1;
+}
+
+/* ===== Escritorio (desde 768px) ===== */
+@media (min-width: 768px) {
+    .hero {
+        align-items: center;
+    }
+
+    .hero-contenido {
+        padding: 0 var(--gutter);
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero-botones {
+        flex-direction: row;
+    }
+
+    .categorias li {
+        width: 220px;
+    }
+
+    .servicios {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .sobre-nosotros {
+        padding-left: var(--gutter);
+        padding-right: var(--gutter);
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .sobre-imagen {
+        aspect-ratio: 4 / 3;
+        order: 0;
+    }
+}

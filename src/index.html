@@ -3,63 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./recursos/base.css">
+    <link rel="stylesheet" href="./recursos/index.css">
     <title>Inicio</title>
 </head>
 <body>
-    <header>
-        <img src="./recursos/imagenes/logo.png" alt="Logo de mola eventos" width="100">
-        <nav>
-            <ul>
+    <header class="encabezado">
+        <a href="./index.html">
+            <img src="./recursos/imagenes/logo.png" alt="Logo de mola eventos" width="100">
+        </a>
+        <nav aria-label="Navegación principal">
+            <ul class="menu">
                 <li><a href="./index.html">Inicio</a></li>
                 <li><a href="./catalogo.html">Catálogo</a></li>
                 <li><a href="./servicios.html">Servicios</a></li>
                 <li><a href="./sobre-nosotros.html">Sobre nosotros</a></li>
                 <li><a href="./contacto.html">Contacto</a></li>
             </ul>
-            <a href="./cotizacion.html" aria-label="Carrito de compras, 2 productos">
-                <img src="./recursos/imagenes/carrito-de-compras.png" width="50"></a>
-            <a href="./catalogo.html">Ver catálogo</a>
-            <a href="./contacto.html">Solicitar cotización</a>
         </nav>
+        <div class="accciones">    
+            <a class="boton boton-oscuro" href="./catalogo.html">Ver catálogo</a>
+            <a href="./carrito.html" aria-label="Ver carrito de compras">
+                <img class="icono-carrito" src="./recursos/imagenes/carrito-de-compras.png" alt="icono de carrito de compras" width="30">
+            </a>
+        </div>
     </header>
     <main>
-        <section>
-            <h1>Mobiliario que transforma tus eventos</h1>
-            <p>Alquilá mobiliario, gazebos, carpas y más para crear eventos únicos e inolvidables. Aportamos diseño y calidez a cada espacio</p>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-contenido"></div>
+                <h1>Mobiliario que transforma tus eventos</h1>
+                <p>Alquilá mobiliario, gazebos, carpas y más para crear eventos únicos e inolvidables. Aportamos diseño y calidez a cada espacio</p>
+                <div class="hero-botones">
+                    <a class="boton boton-principal" href="./catalogo.html">Ver catálogo</a>
+                    <a class="boton boton-borde" href="./contacto.html">Solicitar cotización</a>
+                </div>
+            </div>    
         </section>
-        <section>
-            <h2>Encontrá lo que necesitás para tu evento</h2>
-            <div>
-                <a href="">
-                    <div>
-                        <img src="./recursos/imagenes/seccion-categorias/mesa.jpg" alt="Mesa con sillas" width="200" height="150">
+
+        <!-- CATEGORÍAS -->
+        <section class="seccion" aria-labelledby="titulo-categorias">
+            <h2 class="titulo-seccion">Encontrá lo que necesitás para tu evento</h2>
+            <ul class="categorias">
+                <li>
+                    <a href="./catalogo.html">
+                        <img src="./recursos/imagenes/seccion-categorias/mesa.jpg" alt="Mesa de madera para eventos" width="300">
                         <h3>Mesas</h3>
-                    </div>
-                </a>    
-                <div>
-                    <img src="./recursos/imagenes/seccion-categorias/silla.jpg" alt="sillas con mesa altas tipo industriales" width="200" height="150">
-                    <h3>Sillas</h3>
-                </div>
-                <div>
-                    <img src="./recursos/imagenes/seccion-categorias/living.jpg" alt="Juego de livings" width="200" height="150">
-                    <h3>Livings</h3>
-                </div>
-                <div>
-                    <img src="./recursos/imagenes/seccion-categorias/gazebo.jpg" alt="gazebo blanco" width="200" height="150">
-                    <h3>Gazebos</h3>
-                </div>
-                <div>
-                    <img src="./recursos/imagenes/seccion-categorias/carpa.jpg" alt="carpa blanca" width="200" height="150">
-                    <h3>Carpas</h3>
-                </div>
-            </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="./catalogo.html">
+                        <img src="./recursos/imagenes/seccion-categorias/silla.jpg" alt="Silla Tiffany de madera" width="300">
+                        <h3>Sillas</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="./catalogo.html">
+                        <img src="./recursos/imagenes/seccion-categorias/living.jpg" alt="Living de dos cuerpos con sillones" width="300">
+                        <h3>Livings</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="./catalogo.html">
+                        <img src="./recursos/imagenes/seccion-categorias/gazebo.jpg" alt="Gazebo blanco sobre el césped" width="300">
+                        <h3>Gazebos</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="./catalogo.html">
+                        <img src="./recursos/imagenes/seccion-categorias/carpa.jpg" alt="Carpa blanca iluminada para casamientos" width="300">
+                        <h3>Carpas</h3>
+                    </a>
+                </li>
+            </ul>
     </section>
+
+    <!-- SOBRE NOSOTROS -->
+        <section class="sobre-nosotros" aria-labelledby="titulo-sobre">
+            <div class="sobre-texto">
+                <h2 id="titulo-sobre">Sobre Mola Eventos</h2>
+                <p>
+                    Somos un equipo cordobés de tres socios dedicado al alquiler de mobiliario y
+                    ambientación para eventos sociales y corporativos. Empezamos con pocos juegos de
+                    pallet y hoy seguimos creciendo para acompañar eventos cada vez más grandes.
+                </p>
+                <a class="boton boton-principal" href="./sobre-nosotros.html">Conocé más</a>
+            </div>
+            <img class="sobre-imagen" src="./recursos/imagenes/evento.jpg" alt="Salón de eventos decorado con mesas de madera y luz cálida">
+        </section>
+
     </main>
-    <footer>
-        <!--Columna 1: logo y copyrigth-->
+    <footer class="pie">
+        <!--Columna 1: logo -->
         <div>
-            <img src="./recursos/imagenes/logo.png" alt="logo de mola, solo letras" width="100">
-            <p> &copy; 2026 Mola Eventos. Todos los derechos reservados.</p>
+            <img class="logo logo-claro" src="./recursos/imagenes/logo.png" alt="Logo de Mola Eventos">
+            <p>Hacemos que cada evento sea único y especial.</p>
         </div>
         <!--Columna 2: Navegacion-->
         <div>
@@ -70,7 +108,7 @@
                 <li><a href="./sobre-nosotros.html">Sobre nosotros</a></li>
             </ul>
         </div>
-        <!--Columna 3: contacto-->
+        <!--Columna 3: contacto y copyright-->
         <div>
             <h3>Contacto</h3>
             <a href="./contacto.html">Contacto</a>
@@ -79,6 +117,7 @@
             <p>livingsmola@gmail.com </p>
             <p>Córdoba, Argentina</p>
         </div>
+        <p class="derechos">&copy; 2026 Mola Eventos. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
