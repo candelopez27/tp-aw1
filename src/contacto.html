@@ -35,21 +35,20 @@
             <!-- COLUMNA IZQUIERDA: CANALES-->
             <aside class="columna-info-contacto">
                 <section class="card-canales">
-                    <small>MOLA CONCIERGE</small>
                     <h2>Canales de atención directa</h2>
-                  
+                    
                         <div class="canal-item">
                             <div>
                                 <h4>TELÉFONO & WHATSAPP</h4>
-                                <a href="tel:+543511334567">+54 351 133 4567</a>
-                                <a href="https://wa.me/543511334567" class="link-wa">ESCRIBIR POR WHATSAPP →</a>
+                                <a href="tel:+543517027534">+54 3517027534</a>
+                                <a href="https://wa.me/3517027534" class="link-wa">ESCRIBIR POR WHATSAPP →</a>
                             </div>
                         </div>
 
                         <div class="canal-item">
                             <div>
                                 <h4>CORREO ELECTRÓNICO</h4>
-                                <a href="mailto:hola@molaeventos.com.ar">hola@molaeventos.com.ar</a>
+                                <a href="mailto:livingsmola@gmail.com ">livingsmola@gmail.com</a>
                                 <p><small>Atención corporativa y particulares</small></p>
                             </div>
                         </div>
@@ -64,8 +63,8 @@
                         <div class="canal-item">
                             <div>
                                 <h4>HORARIO DE ATENCIÓN</h4>
-                                <p><strong>Lunes a Viernes de 9:00 a 19:00 hs</strong></p>
-                                <p><small>Sábados de 9:00 a 13:00 hs</small></p>
+                                <p><strong>Lunes a Viernes de 9:00 a 18:00 hs</strong></p>
+                                <p><small>Sábados de 9:00 a 14:00 hs</small></p>
                             </div>
                         </div>
 
@@ -80,7 +79,7 @@
             <section class="columna-formulario">
                 <small>INICIEMOS LA CONVERSACIÓN</small>
                 <h2>Envianos tu consulta</h2>
-                <p>Completá los datos clave y un asesor de Mola Eventos te contactará con una propuesta personalizada.</p>
+                <p>Completá los datos y un asesor de Mola Eventos te contactará con una propuesta personalizada.</p>
 
                 <form action="" method="post">
                     <div>
@@ -89,15 +88,21 @@
                     </div>
 
                     <div>
-                        <label for="id-email-contacto">CORREO ELECTRÓNICO *</label>
-                        <input type="email" id="id-email-contacto" name="email" placeholder="tu@email.com" required>
-                    </div>
-
-                    <div>
                         <label for="id-tel-contacto">TELÉFONO / WHATSAPP *</label>
                         <input type="tel" id="id-tel-contacto" name="telefono" placeholder="+54 9 351 ..." required>
                     </div>
-
+                    <div>
+                        <label for="id-email-contacto">CORREO ELECTRÓNICO *</label>
+                        <input type="email" id="id-email-contacto" name="email" placeholder="tu@email.com" required>
+                    </div>
+                    <div>
+                        <label for="id-direccion-evento">DIRECCIÓN EXACTA DEL EVENTO</label>
+                        <input type="text" id="id-direccion-evento" name="direccion" placeholder="Ej. Av. Colón 1234, Córdoba, Argentina"> 
+                    </div>
+                    <div>
+                        <label for="id-fecha-y-hora">FECHA Y HORA DEL EVENTO</label>
+                        <input type="datetime-local" id="id-fecha-y-hora" name="fecha-hora">
+                    </div>     
                     <div>
                         <label for="id-tipo">TIPO DE EVENTO *</label>
                         <select id="id-tipo" name="tipo-evento" required>
@@ -105,12 +110,13 @@
                             <option value="social">Social</option>
                             <option value="corporativo">Corporativo</option>
                             <option value="infantil">Infantil</option>
+                            <option value="otro">Otro</option>
                         </select>
                     </div>
 
                     <div>
-                        <label for="id-fecha-estimada">FECHA ESTIMADA DEL EVENTO</label>
-                        <input type="date" id="id-fecha-estimada" name="fecha-estimada">
+                        <label for="id-disponibilidad-horaria">Disponibilidad horaria para la entrega y retiro</label>
+                        <input type="text" id="id-disponibilidad-horaria" name="disponibilidad-horaria" placeholder="Ej. Lunes de 18 a 22 hs">
                     </div>
 
                     <div>
@@ -169,8 +175,10 @@
         <!--Columna 3: contacto-->
         <div>
             <h3>Contacto</h3>
-            <a href="contacto.html">Contacto</a>
+            <a href="./contacto.html">Contacto</a>
             <p>3517027534</p>
+            <p>Instagram/ Facebook: @molaeventos.cba</p>
+            <p>livingsmola@gmail.com </p>
             <p>Córdoba, Argentina</p>
         </div>
     </footer>
