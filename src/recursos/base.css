@@ -6,15 +6,16 @@
 /* 1. Variables*/
 :root {
     /* Colores */
-    --fondo: #fff8f6;
-    --texto: #231917;
-    --texto-suave: #4f4442;
-    --primario: #110403;
-    --primario-contenedor: #2d1b18;
-    --secundario: #75593c;
-    --secundario-claro: #ffdcbb;
-    --superficie: #fceae6;
-    --superficie-alta: #f1dfdb;
+    /* Colores actualizados según tu manual de marca */
+    --fondo: #f6f4e7; /* Fondo marfil claro / crema */
+    --texto: #3e2318; /* Marrón oscuro principal para texto */
+    --texto-suave: #515a49; /* Tono secundario para textos menos contrastados */
+    --primario: #3e2318; /* Marrón oscuro */
+    --primario-contenedor: #2d1b18; /* Marrón más profundo para contrastes */
+    --secundario: #515a49; /* Verde militar / grisáceo de la paleta */
+    --secundario-claro: #d7cbb5; /* Tono arena claro para detalles y bordes */
+    --superficie: #efece1; /* Superficie adaptada a la gama cálida */
+    --superficie-alta: #e3dec9; /* Superficie más alta para tarjetas o bordes */
     --blanco: #ffffff;
 
     /* Medidas */
@@ -24,9 +25,9 @@
     --xl: 48px;
     --xxl: 80px;
 
-    /* Tipografías */
-    --fuente-titulo: "Bodoni Moda", Georgia, serif;
-    --fuente-texto: "Plus Jakarta Sans", Arial, sans-serif;
+    /* Tipografías actualizadas según tu manual */
+    --fuente-titulo: "Against", "Bodoni Moda", Georgia, serif; /* Tipografía Primaria */
+    --fuente-texto: "Sweet Sans Pro", "Plus Jakarta Sans", Arial, sans-serif; /* Tipografía Secundaria */
 }
 
 /*2. Reset */
@@ -203,10 +204,10 @@ h1, h2 {
 
 .pie p {
     color: rgba(255, 255, 255, 0.8);
+    font-family: var(--fuente-texto);
 }
 
 .logo-claro {
-    filter: brightness(0) invert(1);
     margin-bottom: var(--md);
 }
 
