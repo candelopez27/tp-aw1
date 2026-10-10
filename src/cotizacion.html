@@ -3,30 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/cotizacion.css">
     <title>Cotización | Mola Eventos</title>
 </head>
 <body>
-    <header>
-        <img src="./recursos/imagenes/logo.png" alt="Logo de mola eventos" width="100">
+    <header class="encabezado">
+        <a href="./index.html">
+            <img src="./recursos/imagenes/logo.png" alt="Logo de mola eventos" width="100">
+        </a>
         <nav aria-label="Navegación principal">
-            <ul>
+            <ul class="menu">
                 <li><a href="./index.html">Inicio</a></li>
                 <li><a href="./catalogo.html">Catálogo</a></li>
                 <li><a href="./servicios.html">Servicios</a></li>
                 <li><a href="./sobre-nosotros.html">Sobre nosotros</a></li>
                 <li><a href="./contacto.html">Contacto</a></li>
             </ul>
-            <a href="./cotizacion.html" aria-label="Ver carrito de compras">
-                <img src="./recursos/imagenes/carrito-de-compras.png" alt="" width="50">
-            </a>
-            <a href="./catalogo.html">Ver catálogo</a>
         </nav>
+        <div class="acciones">
+            <a class="boton boton-oscuro" href="./catalogo.html">Ver catálogo</a>
+            <a href="./cotizacion.html" aria-label="Ver carrito de compras">
+                <img class="icono-carrito" src="./recursos/imagenes/carrito-de-compras.png" alt="" width="30">
+            </a>
+        </div>
     </header>
 
-    <main>
+    <main class="contenedor-cotizacion">
         <!-- NAVEGACIÓN -->
-        <nav aria-label="Ruta de navegación">
-            <p><small>INICIO / CATÁLOGO / COTIZACIÓN</small></p>
+        <nav class="migas-pan" aria-label="Ruta de navegación">
+            <p><small><a href="./index.html">INICIO</a> / <a href="./catalogo.html">CATÁLOGO</a> / <span>COTIZACIÓN</span></small></p>
         </nav>
 
         <header class="encabezado-cotizacion">
@@ -35,7 +41,7 @@
         </header>
 
         <!-- FORMULARIO GLOBAL DE COTIZACIÓN -->
-        <form action="" method="post" id="form-cotizacion">
+        <form action="#" method="post" id="form-cotizacion">
 
             <!-- SECCIÓN IZQUIERDA: PRODUCTOS Y DATOS -->
             <div class="columna-principal">
@@ -47,7 +53,7 @@
                     <ul class="lista-carrito">
                         <!-- Producto 1 -->
                         <li class="item-carrito">
-                            <img src="./recursos/imagenes/grilla-productos/Juego de Living Estándar Capacidad 10 personas 2.jpg"
+                            <img src="./recursos/imagenes/grilla-productos/Juego de Living Estándar – Capacidad 10 personas 2.jpg"
                                  alt="Juego de Living Estándar" width="80">
                             <h3>Juego de Living Estándar Capacidad 10 personas</h3>
                             <div class="control-cantidad">
@@ -203,27 +209,29 @@
         </form>
     </main>
 
-    <footer>
-        <div>
-            <img src="./recursos/imagenes/logo.png" alt="logo de mola, solo letras" width="100">
-            <p>&copy; 2026 Mola Eventos. Todos los derechos reservados.</p>
-        </div>
-        <div>
-            <h3>Navegación</h3>
-            <ul>
-                <li><a href="./index.html">Inicio</a></li>
-                <li><a href="./catalogo.html">Catálogo</a></li>
-                <li><a href="./servicios.html">Servicios</a></li>
-                <li><a href="./sobre-nosotros.html">Sobre nosotros</a></li>
-            </ul>
-        </div>
-        <div>
-            <h3>Contacto</h3>
-            <a href="./contacto.html">Contacto</a>
-            <p>3517027534</p>
-            <p>Instagram/ Facebook: @molaeventos.cba</p>
-            <p>livingsmola@gmail.com </p>
-            <p>Córdoba, Argentina</p>
+    <footer class="pie">
+        <div class="pie-contenido">
+            <div>
+                <img class="logo-claro" src="./recursos/imagenes/logo.png" alt="logo de mola, solo letras" width="100">
+                <p>&copy; 2026 Mola Eventos. Todos los derechos reservados.</p>
+            </div>
+            <div>
+                <h3>Navegación</h3>
+                <ul>
+                    <li><a href="./index.html">Inicio</a></li>
+                    <li><a href="./catalogo.html">Catálogo</a></li>
+                    <li><a href="./servicios.html">Servicios</a></li>
+                    <li><a href="./sobre-nosotros.html">Sobre nosotros</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Contacto</h3>
+                <a href="./contacto.html">Contacto</a>
+                <p>3517027534</p>
+                <p>Instagram/ Facebook: @molaeventos.cba</p>
+                <p>livingsmola@gmail.com</p>
+                <p>Córdoba, Argentina</p>
+            </div>
         </div>
     </footer>
 </body>
