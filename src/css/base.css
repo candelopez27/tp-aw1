@@ -168,6 +168,22 @@ h1, h2 {
     gap: var(--md);
 }
 
+.acciones > a:last-child {
+    display: grid;
+    width: 44px;
+    height: 44px;
+    place-items: center;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+}
+
+.acciones > a:last-child:hover {
+    transform: translateY(-2px);
+    border-color: var(--superficie-alta);
+    background: var(--superficie);
+}
+
 .icono-carrito {
     width: 32px;
     height: auto;
@@ -243,5 +259,67 @@ h1, h2 {
 
     .derechos {
         grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 767px) {
+    .encabezado {
+        flex-wrap: nowrap;
+        gap: 10px;
+        padding: 8px var(--md);
+    }
+
+    .encabezado > a,
+    .acciones {
+        flex: 0 0 auto;
+    }
+
+    .encabezado > a img {
+        width: 76px;
+    }
+
+    .encabezado nav {
+        min-width: 0;
+        flex: 1;
+        overflow: hidden;
+    }
+
+    .menu {
+        width: 100%;
+        gap: 12px;
+        overflow-x: auto;
+        white-space: nowrap;
+        font-size: 12px;
+        scrollbar-width: none;
+    }
+
+    .menu::-webkit-scrollbar {
+        display: none;
+    }
+
+    .acciones {
+        gap: 0;
+    }
+
+    .acciones .boton-oscuro {
+        display: none;
+    }
+
+    .acciones > a:last-child {
+        width: 36px;
+        height: 36px;
+    }
+
+    .icono-carrito {
+        width: 28px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
     }
 }
