@@ -1,0 +1,662 @@
+
+.contenedor-catalogo {
+    max-width: var(--ancho-max);
+    margin: 0 auto;
+    padding: 40px var(--gutter);
+}
+
+.encabezado-catalogo {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 24px;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--superficie-alta);
+}
+
+.etiqueta-catalogo {
+    color: var(--secundario);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.titulo-catalogo {
+    margin: 8px 0;
+    color: var(--primario);
+    font-family: var(--fuente-titulo);
+    font-size: 36px;
+}
+
+.descripcion-catalogo {
+    color: var(--texto-suave);
+    font-size: 14px;
+}
+
+
+/* 2. Buscador */
+
+.buscador-catalogo {
+    width: 100%;
+    max-width: 360px;
+}
+
+.campo-busqueda {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--superficie-alta);
+    border-radius: 3px;
+    background: var(--blanco);
+    color: var(--texto);
+    font-family: var(--fuente-texto);
+    outline: none;
+}
+
+.campo-busqueda:focus {
+    border-color: var(--secundario);
+}
+
+/* 3. Distribución principal del catálogo */
+.distribucion-catalogo {
+    display: grid; 
+    grid-template-columns: 220px minmax(0, 1fr) 280px; 
+    gap: 30px; 
+    align-items: start; 
+    width: 100%;
+}
+
+/* 4. Filtros */
+
+.panel-filtros {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.grupo-filtro {
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--superficie-alta);
+}
+
+.titulo-filtro {
+    margin-bottom: 12px;
+    color: var(--texto-suave);
+    font-family: var(--fuente-texto);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.lista-categorias {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.boton-categoria {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 9px 10px;
+    border: none;
+    border-radius: 3px;
+    background: transparent;
+    color: var(--texto-suave);
+    text-align: left;
+    cursor: pointer;
+}
+
+.boton-categoria:hover,
+.categoria-activa {
+    background: var(--superficie);
+    color: var(--primario);
+}
+
+.cantidad-categoria {
+    font-size: 12px;
+}
+
+.rango-precios {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+}
+
+.campo-precio {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    font-size: 11px;
+    color: var(--texto-suave);
+}
+
+.campo-precio input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--superficie-alta);
+    background: var(--blanco);
+    color: var(--texto);
+    box-sizing: border-box;
+}
+
+.lista-eventos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.opcion-evento {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--texto-suave);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.boton-limpiar {
+    padding: 10px;
+    border: 1px solid var(--superficie-alta);
+    background: transparent;
+    color: var(--texto-suave);
+    cursor: pointer;
+}
+
+.boton-limpiar:hover {
+    border-color: var(--secundario);
+    color: var(--primario);
+}
+
+
+/* 5. Grilla de productos */
+
+.grilla-productos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+
+/* 6. Tarjetas */
+
+.tarjeta-producto {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--superficie-alta);
+    background: var(--blanco);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(45, 27, 24, 0.10);
+}
+
+.contenedor-imagen-producto {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    background: var(--superficie);
+}
+
+.imagen-producto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+.tarjeta-producto:hover .imagen-producto {
+    transform: scale(1.04);
+}
+
+.etiqueta-producto {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 8px;
+    background: var(--fondo);
+    color: var(--primario);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.informacion-producto {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 14px;
+}
+
+.nombre-producto {
+    color: var(--texto);
+    font-family: var(--fuente-texto);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.descripcion-producto  {
+    margin-top: 4px;
+    color: var(--texto-suave);
+    font-size: 12px;
+}
+
+.precio-producto {
+    margin-top: 12px;
+    color: var(--primario);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.unidad-producto {
+    color: var(--texto-suave);
+    font-size: 11px;
+    font-weight: 400;
+}
+
+/* Ocultamos el checkbox */
+.check-detalle {
+    display: none;
+}
+
+/* La tarjeta base debe tener posición relativa para contener la capa absoluta */
+.tarjeta-producto {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--superficie-alta);
+    background: var(--blanco);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Ocultamos la vista de detalle por defecto */
+.vista-detalle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+    transform: translateY(100%); /* Empuja el detalle fuera de la vista hacia abajo */
+    transition: transform 0.35s ease-in-out;
+    z-index: 5;
+}
+
+/* CUANDO EL CHECKBOX ESTÁ MARCADO: Desliza la vista de detalle cubriendo toda la tarjeta */
+.check-detalle:checked ~ .vista-detalle {
+    transform: translateY(0);
+}
+
+/* Estilos internos de la vista detalle */
+.contenido-detalle h3 {
+    color: var(--primario);
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.contenido-detalle {
+    font-size: 12px;
+    color: var(--texto-suave);
+    overflow-y: auto;
+    max-height: 80%;
+}
+
+.contenido-detalle ul {
+    margin: 6px 0;
+    padding-left: 16px;
+    list-style-type: disc;
+}
+
+.contenido-detalle li {
+    margin-bottom: 4px;
+}
+
+/* Botones para activar y cerrar */
+.btn-ver-detalle {
+    display: inline-block;
+    color: var(--secundario);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+    margin: 6px 0;
+}
+
+.btn-ver-detalle:hover {
+    color: var(--primario);
+}
+
+.btn-cerrar-detalle {
+    display: inline-block;
+    background: var(--primario);
+    color: var(--blanco);
+    text-align: center;
+    padding: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-cerrar-detalle:hover {
+    background: var(--secundario);
+}
+
+/* 7. Cantidad y botón de agregar */
+.controles-producto {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid var(--superficie);
+}
+
+.stock-productos {
+    width: 100%;
+    font-size: 12px;
+    color: var(--texto-suave);
+    margin-bottom: 4px;
+}
+
+.selector-cantidad {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--superficie-alta);
+    background: var(--blanco);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.boton-cantidad {
+    padding: 6px 10px;
+    border: none;
+    background: var(--fondo);
+    color: var(--primario);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.boton-cantidad:hover {
+    background: var(--superficie-alta);
+}
+
+.numero-cantidad {
+    padding: 0 10px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.boton-agregar {
+    padding: 8px 12px;
+    border: none;
+    background: var(--primario);
+    color: var(--blanco);
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.boton-agregar:hover {
+    background: var(--secundario);
+}
+
+/* 8. Resumen del pedido (Sidebar derecho) */
+.resumen-pedido {
+    position: sticky;
+    top: 100px;
+    padding: 20px;
+    border: 1 spinors 1px solid var(--superficie-alta);
+    border: 1px solid var(--superficie-alta);
+    background: var(--blanco);
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.lista-pedido {
+    max-height: 280px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+.producto-pedido {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--superficie);
+}
+
+.detalle-pedido {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+}
+
+.imagen-pedido {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.nombre-pedido {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--texto);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cantidad-producto-pedido {
+    color: var(--texto-suave);
+    font-size: 11px;
+}
+
+.precio-producto-pedido {
+    color: var(--primario);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.boton-eliminar {
+    border: none;
+    background: transparent;
+    color: var(--texto-suave);
+    cursor: pointer;
+}
+
+.boton-eliminar:hover {
+    color: #a33d32;
+}
+
+.total-pedido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--superficie-alta);
+}
+
+.texto-total {
+    color: var(--texto-suave);
+    font-size: 12px;
+}
+
+.importe-total {
+    color: var(--primario);
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.aclaracion-pedido {
+    margin-top: 10px;
+    color: var(--texto-suave);
+    font-size: 11px;
+}
+
+.boton-confirmar {
+    width: 100%;
+    margin-top: 16px;
+    padding: 13px;
+    border: none;
+    background: var(--primario);
+    color: var(--blanco);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.boton-confirmar:hover {
+    background: var(--secundario);
+}
+
+.mensaje-pedido {
+    margin-top: 10px;
+    color: var(--texto-suave);
+    font-size: 11px;
+    text-align: center;
+}
+
+
+/* 9. Barra inferior para celulares */
+
+.pedido-movil {
+    display: none;
+}
+
+
+/* 10. Adaptación a pantallas medianas */
+
+@media (max-width: 1100px) {
+    .distribucion-catalogo {
+        grid-template-columns: 170px minmax(0, 1fr);
+    }
+
+    .grilla-productos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .resumen-pedido {
+        position: static;
+        grid-column: 1 / -1;
+    }
+}
+
+
+/* 11. Adaptación a celulares */
+
+@media (max-width: 767px) {
+    .contenedor-catalogo {
+        padding: 28px 16px 100px;
+    }
+
+    .encabezado-catalogo {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .titulo-catalogo {
+        font-size: 29px;
+    }
+
+    .buscador-catalogo {
+        max-width: none;
+    }
+
+    .distribucion-catalogo {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .panel-filtros {
+        gap: 16px;
+    }
+
+    .grilla-productos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .informacion-producto {
+        padding: 10px;
+    }
+
+    .nombre-producto {
+        font-size: 13px;
+    }
+
+    .precio-producto {
+        font-size: 16px;
+    }
+
+    .controles-producto {
+        flex-wrap: wrap;
+    }
+
+    .boton-agregar {
+        width: 100%;
+        flex-basis: 100%;
+    }
+
+    .resumen-pedido {
+        display: none;
+    }
+
+    .pedido-movil {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 20;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 16px;
+        border-top: 1px solid var(--superficie-alta);
+        background: var(--fondo);
+        box-shadow: 0 -4px 15px rgba(45, 27, 24, 0.08);
+    }
+
+    .pedido-movil .boton-confirmar {
+        width: auto;
+        margin: 0;
+        padding: 11px 14px;
+    }
+}
+
+
+/* 12. Celulares pequeños */
+
+@media (max-width: 380px) {
+    .grilla-productos {
+        grid-template-columns: 1fr;
+    }
+}

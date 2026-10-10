@@ -117,14 +117,19 @@
 
 /* ===== Sobre nosotros (bloque del inicio) ===== */
 .sobre-nosotros {
+    width: 100%;
+    background: var(--superficie);
+    padding: var(--xxl) 0; /* Espaciado arriba y abajo */
+}
+
+.sobre-contenido {
     max-width: var(--ancho-max);
     margin: 0 auto;
-    padding: var(--xxl) var(--md);
+    padding: 0 var(--gutter); /* Margen de seguridad a los lados */
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--xl);
     align-items: center;
-    background: var(--superficie);
 }
 
 .sobre-texto h2 {
@@ -143,10 +148,20 @@
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
-    border-radius:10px;
+    border-radius: 10px;
     order: -1;
 }
 
+/* En pantallas grandes (escritorio) */
+@media (min-width: 768px) {
+    .sobre-contenido {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .sobre-imagen {
+        order: initial; /* Vuelve a su orden natural */
+    }
+}
 /*Ajustes de header para moviles*/
 @media (max-width: 767px) {
     .encabezado {

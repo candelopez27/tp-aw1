@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./recursos/base.css">
-    <link rel="stylesheet" href="./recursos/index.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/index.css">
     <title>Inicio</title>
 </head>
 <body>
@@ -79,7 +79,8 @@
     </section>
 
     <!-- SOBRE NOSOTROS -->
-        <section class="sobre-nosotros" aria-labelledby="titulo-sobre">
+    <section class="sobre-nosotros" aria-labelledby="titulo-sobre">
+        <div class="sobre-contenido">
             <div class="sobre-texto">
                 <h2 id="titulo-sobre">Sobre Mola Eventos</h2>
                 <p>
@@ -92,34 +93,41 @@
             <video autoplay muted loop playsinline class="sobre-imagen">
                 <source src="./recursos/videos/sobre-nosotros.mp4" type="video/mp4">
             </video>
-        </section>
+        </div>
+    </section>
 
     </main>
     <footer class="pie">
-        <!--Columna 1: logo -->
-        <div>
-            <img class="logo logo-claro" src="./recursos/imagenes/logo.png" alt="Logo de Mola Eventos">
-            <p>Hacemos que cada evento sea único y especial.</p>
+        <div class="pie-contenido">
+            <!-- Columna 1: logo y copyright -->
+            <div>
+                <img class="logo-claro" src="./recursos/imagenes/logo.png" alt="logo de mola, solo letras" width="100">
+                <p>&copy; 2026 Mola Eventos. Todos los derechos reservados.</p>
+            </div>
+            <!-- Columna 2: Navegación -->
+            <div>
+                <h3>Navegación</h3>
+                <ul>
+                    <li><a href="./index.html">Inicio</a></li>
+                    <li><a href="./catalogo.html">Catálogo</a></li>
+                    <li><a href="./servicios.html">Servicios</a></li>
+                    <li><a href="./sobre-nosotros.html">Sobre nosotros</a></li>
+                    <li><a href="./contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <!-- Columna 3: contacto -->
+            <div>
+                <h3>Contacto</h3>
+                <p>3517027534</p>
+                <p>Instagram/ Facebook: @molaeventos.cba</p>
+                <p>livingsmola@gmail.com</p>
+                <p>Córdoba, Argentina</p>
+            </div>
+            <!-- Derechos (opcional si usas grid con span) -->
+            <div class="derechos">
+                <p>Todos los derechos reservados.</p>
+            </div>
         </div>
-        <!--Columna 2: Navegacion-->
-        <div>
-            <h3>Navegación</h3>
-            <ul>
-                <li><a href="./catalogo.html">Catálogo</a></li>
-                <li><a href="./servicios.html">Servicios</a></li>
-                <li><a href="./sobre-nosotros.html">Sobre nosotros</a></li>
-            </ul>
-        </div>
-        <!--Columna 3: contacto y copyright-->
-        <div>
-            <h3>Contacto</h3>
-            <a href="./contacto.html">Contacto</a>
-            <p>3517027534</p>
-            <p>Instagram/ Facebook: @molaeventos.cba</p>
-            <p>livingsmola@gmail.com </p>
-            <p>Córdoba, Argentina</p>
-        </div>
-        <p class="derechos">&copy; 2026 Mola Eventos. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
