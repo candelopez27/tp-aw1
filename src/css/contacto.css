@@ -1,0 +1,274 @@
+/* ===== PÁGINA DE CONTACTO (contacto.css) ===== */
+
+/* 1. Encabezado de la página */
+.migas-pan {
+    margin: 5px 0 20px 5px;
+    color: var(--texto-suave);
+}
+
+.migas-pan a {
+    color: var(--texto-suave);
+    text-decoration: none;
+}
+
+.migas-pan a:hover {
+    color: var(--primario);
+}
+
+.migas-pan span {
+    color: var(--primario);
+    font-weight: 600;
+}
+
+.encabezado-contacto {
+    margin: 5px 0 20px 5px;
+    max-width: 700px;
+}
+
+.etiqueta-seccion {
+    display: block;
+    color: var(--secundario);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.encabezado-contacto h1 {
+    font-size: 42px;
+    color: var(--primario);
+    margin-bottom: 16px;
+    line-height: 1.1;
+}
+
+.encabezado-contacto p {
+    font-size: 18px;
+    color: var(--texto-suave);
+    line-height: 1.7; 
+    letter-spacing: 0.3px; 
+    max-width: 650px; 
+}
+
+.parrafo-italica {
+    font-style: italic;
+    font-weight: 300; 
+    opacity: 0.9; 
+    margin-top: 8px;
+}
+
+/* 2. Distribución en 2 columnas (Grilla principal) */
+.grid-contacto {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+@media (min-width: 992px) {
+    .grid-contacto {
+        grid-template-columns: 1fr 1.4fr; /* 5 cols / 7 cols aproximadamente */
+        gap: 48px;
+        align-items: start;
+    }
+}
+
+/* 3. Columna Izquierda: Canales de atención */
+.columna-info-contacto {
+    display: flex;
+    margin:10px;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.card-canales {
+    background: var(--superficie);
+    padding: 32px;
+    border-radius: 8px;
+    border: 1px solid var(--superficie-alta);
+}
+
+.card-canales h2 {
+    font-size: 24px;
+    color: var(--primario);
+    margin-bottom: 24px;
+}
+
+.canal-item {
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--superficie-alta);
+}
+
+.canal-item:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.canal-item h4 {
+    font-size: 12px;
+    color: var(--secundario);
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+}
+
+.canal-item a {
+    display: block;
+    color: var(--primario);
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.canal-item a:hover {
+    color: var(--secundario);
+}
+
+.canal-item .link-wa {
+    font-size: 13px;
+    color: var(--secundario);
+    margin-top: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.canal-item p {
+    color: var(--texto-suave);
+    font-size: 15px;
+    margin: 4px 0 0;
+}
+
+.bloque-asesoria {
+    background: var(--blanco);
+    padding: 20px;
+    border-radius: 6px;
+    border-left: 4px solid var(--secundario);
+    margin-top: 12px;
+}
+
+.bloque-asesoria h4 {
+    color: var(--primario);
+    font-size: 15px;
+    margin-bottom: 6px;
+}
+
+.bloque-asesoria p {
+    color: var(--texto-suave);
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* 4. Columna Derecha: Formulario */
+.columna-formulario {
+    background: var(--blanco);
+    margin: 10px;
+    padding: 32px;
+    border-radius: 8px;
+    border: 1px solid var(--superficie-alta);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.columna-formulario h2 {
+    font-size: 28px;
+    color: var(--primario);
+    margin-bottom: 8px;
+}
+
+.columna-formulario > p {
+    color: var(--texto-suave);
+    margin-bottom: 28px;
+    font-size: 15px;
+}
+
+.formulario-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.grupo-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.grupo-formulario label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--primario);
+    letter-spacing: 0.05em;
+}
+
+.grupo-formulario input,
+.grupo-formulario select,
+.grupo-formulario textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--superficie-alta);
+    border-radius: 4px;
+    background: var(--fondo);
+    color: var(--texto);
+    font-family: inherit;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+.grupo-formulario input:focus,
+.grupo-formulario select:focus,
+.grupo-formulario textarea:focus {
+    outline: none;
+    border-color: var(--secundario);
+    background: var(--blanco);
+}
+
+.grupo-formulario textarea {
+    resize: vertical;
+}
+
+.nota-seguridad {
+    color: var(--texto-suave);
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* 5. Sección Inferior: Tarjetas de Garantía */
+.tarjetas-garantia {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    background: var(--superficie);
+    padding: 40px 32px;
+    border-radius: 12px;
+    margin-bottom: 60px;
+}
+
+@media (min-width: 768px) {
+    .tarjetas-garantia {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.tarjeta-garantia-item small {
+    display: block;
+    color: var(--secundario);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+}
+
+.tarjeta-garantia-item h3 {
+    font-size: 18px;
+    color: var(--primario);
+    margin-bottom: 10px;
+}
+
+.tarjeta-garantia-item p {
+    font-size: 14px;
+    color: var(--texto-suave);
+    line-height: 1.5;
+    margin: 0;
+}

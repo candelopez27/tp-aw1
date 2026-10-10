@@ -1,4 +1,21 @@
+.migas-pan {
+    margin: 5px 0 20px 5px;
+    color: var(--texto-suave);
+}
 
+.migas-pan a {
+    color: var(--texto-suave);
+    text-decoration: none;
+}
+
+.migas-pan a:hover {
+    color: var(--primario);
+}
+
+.migas-pan span {
+    color: var(--primario);
+    font-weight: 600;
+}
 .contenedor-catalogo {
     max-width: var(--ancho-max);
     margin: 0 auto;
