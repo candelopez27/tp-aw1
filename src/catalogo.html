@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/catalogo.css">
-    <title>Catálogo</title>
+    <script type="module" src="./js/catalogo.js"></script>
+
+    <title>Catálogo | Mola Eventos</title>
 </head>
+
 <body>
+
+    <!-- ENCABEZADO -->
     <header class="encabezado">
+
         <a href="./index.html">
-            <img src="./recursos/imagenes/logo.png" alt="Logo de mola eventos" width="100">
+            <img
+                src="./recursos/imagenes/logo.png"
+                alt="Logo de Mola Eventos"
+                width="100"
+            >
         </a>
+
         <nav aria-label="Navegación principal">
             <ul class="menu">
                 <li><a href="./index.html">Inicio</a></li>
@@ -21,284 +34,373 @@
                 <li><a href="./contacto.html">Contacto</a></li>
             </ul>
         </nav>
-        <div class="acciones">    
-            <a class="boton boton-oscuro" href="./catalogo.html">Ver catálogo</a>
-            <a href="./cotizacion.html" aria-label="Ver carrito de compras">
-                <img class="icono-carrito" src="./recursos/imagenes/carrito-de-compras.png" alt="icono de carrito de compras" width="30">
+
+        <div class="acciones">
+
+            <a class="boton boton-oscuro" href="./catalogo.html">
+                Ver catálogo
             </a>
+
+            <a href="./cotizacion.html" aria-label="Ver pedido">
+                <img
+                    class="icono-carrito"
+                    src="./recursos/imagenes/carrito-de-compras.png"
+                    alt="Carrito de compras"
+                    width="30"
+                >
+            </a>
+
         </div>
+
     </header>
 
+
+    <!-- CONTENIDO PRINCIPAL -->
     <main class="contenedor-catalogo">
+
+        <!-- TÍTULO Y BUSCADOR -->
         <section class="encabezado-catalogo">
+
             <div class="introduccion-catalogo">
-                <!-- Navegación interna / Migas de pan -->
+
                 <nav class="migas-pan" aria-label="Navegación de ubicación">
-                    <p><small><a href="./index.html">INICIO</a> / <span>CATÁLOGO</span></small></p>
+                    <p>
+                        <small>
+                            <a href="./index.html">INICIO</a> /
+                            <span>CATÁLOGO</span>
+                        </small>
+                    </p>
                 </nav>
-                <h1 class="titulo-catalogo">Catálogo de mobiliario</h1> 
-                <p class="descripcion-catalogo">Elegí los productos que necesitás para tu evento.</p> 
+
+                <h1 class="titulo-catalogo">
+                    Catálogo de mobiliario
+                </h1>
+
+                <p class="descripcion-catalogo">
+                    Elegí los productos que necesitás para tu evento.
+                </p>
+
             </div>
-            <!-- Filtro superior -->
-            <form class="buscador-catalogo" action="#" method="get"> 
-                <label for="buscar-producto">Buscar productos</label> 
-                <input type="search" id="buscar-producto" name="busqueda" class="campo-busqueda" placeholder="¿Qué estás buscando?"> 
-            </form> 
+
+            <form class="buscador-catalogo" id="formulario-busqueda">
+
+                <label for="buscar-producto">
+                    Buscar productos
+                </label>
+
+                <input
+                    type="search"
+                    id="buscar-producto"
+                    name="busqueda"
+                    class="campo-busqueda"
+                    placeholder="¿Qué estás buscando?"
+                >
+
+            </form>
+
         </section>
 
-        <!-- BARRA LATERAL O SIDEBAR + GRILLA + PEDIDO --> 
-        <div class="distribucion-catalogo"> 
-            <!-- PANEL LATERAL DE FILTROS --> 
-            <aside class="panel-filtros"> 
-                <!-- Categorías --> 
-                <section class="grupo-filtro"> 
-                    <h2 class="titulo-filtro">Categorías</h2>
-                    <ul class="lista-categorias">
-                        <li> 
-                            <a href="#" class="boton-categoria categoria-activa">Todas<span class="cantidad-categoria">5</span></a> 
-                        </li> 
-                        <li> 
-                            <a href="#" class="boton-categoria">Mesas</a> 
-                        </li> 
-                        <li>
-                            <a href="#" class="boton-categoria">Sillas</a>
-                        </li>
-                        <li>
-                            <a href="#" class="boton-categoria">Livings</a> 
-                        </li> 
-                        <li>
-                            <a href="#" class="boton-categoria">Gazebos</a>
-                        </li> 
-                        <li> 
-                            <a href="#" class="boton-categoria">Carpas</a>
-                        </li>
-                    </ul>
-                </section> 
 
-                <!-- Filtro por precio --> 
-                <section class="grupo-filtro"> 
-                    <h2 class="titulo-filtro">Precio</h2>
-                    <div class="rango-precios">
-                        <label class="campo-precio">
-                            <span>Desde</span>
-                            <input type="number" name="precio-minimo" placeholder="$ 0" min="0">
-                        </label>
-                        <label class="campo-precio">
-                            <span>Hasta</span> 
-                            <input type="number" name="precio-maximo" placeholder="$ 100.000+" min="0">
-                        </label> 
-                    </div>
-                </section> 
+        <!-- DISTRIBUCIÓN DEL CATÁLOGO -->
+        <div class="distribucion-catalogo">
 
-                <!-- Filtro por tipo de evento --> 
+
+            <!-- PANEL DE FILTROS -->
+            <aside class="panel-filtros">
+
+                <!-- FILTRO POR CATEGORÍA -->
                 <section class="grupo-filtro">
-                    <h2 class="titulo-filtro">Tipo de evento</h2>
+
+                    <h2 class="titulo-filtro">
+                        Categorías
+                    </h2>
+
+                    <ul class="lista-categorias">
+
+                        <li>
+                            <a
+                                href="#"
+                                class="boton-categoria categoria-activa"
+                                data-categoria="todas"
+                            >
+                                Todas
+                                <span
+                                    class="cantidad-categoria"
+                                    id="cantidad-categoria"
+                                >0</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="#"
+                                class="boton-categoria"
+                                data-categoria="mesas"
+                            >
+                                Mesas
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="#"
+                                class="boton-categoria"
+                                data-categoria="sillas"
+                            >
+                                Sillas
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="#"
+                                class="boton-categoria"
+                                data-categoria="livings"
+                            >
+                                Livings
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="#"
+                                class="boton-categoria"
+                                data-categoria="gazebos"
+                            >
+                                Gazebos
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="#"
+                                class="boton-categoria"
+                                data-categoria="carpas"
+                            >
+                                Carpas
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </section>
+
+
+                <!-- FILTRO POR PRECIO -->
+                <section class="grupo-filtro">
+
+                    <h2 class="titulo-filtro">
+                        Precio
+                    </h2>
+
+                    <div class="rango-precios">
+
+                        <label class="campo-precio">
+
+                            <span>Desde</span>
+
+                            <input
+                                type="number"
+                                id="precio-minimo"
+                                name="precio-minimo"
+                                placeholder="$ 0"
+                                min="0"
+                            >
+
+                        </label>
+
+                        <label class="campo-precio">
+
+                            <span>Hasta</span>
+
+                            <input
+                                type="number"
+                                id="precio-maximo"
+                                name="precio-maximo"
+                                placeholder="$ 100.000+"
+                                min="0"
+                            >
+
+                        </label>
+
+                    </div>
+
+                </section>
+
+
+                <!-- FILTRO POR TIPO DE EVENTO -->
+                <section class="grupo-filtro">
+
+                    <h2 class="titulo-filtro">
+                        Tipo de evento
+                    </h2>
+
                     <ul class="lista-eventos">
-                        <li> 
+
+                        <li>
                             <label class="opcion-evento">
-                                <input type="checkbox" name="evento" value="social"> 
+
+                                <input
+                                    type="checkbox"
+                                    name="evento"
+                                    value="social"
+                                >
+
                                 <span>Social</span>
+
                             </label>
-                        </li> 
-                        <li> 
-                            <label class="opcion-evento"> 
-                                <input type="checkbox" name="evento" value="corporativo">
+                        </li>
+
+                        <li>
+                            <label class="opcion-evento">
+
+                                <input
+                                    type="checkbox"
+                                    name="evento"
+                                    value="corporativo"
+                                >
+
                                 <span>Corporativo</span>
+
                             </label>
                         </li>
-                        <li> 
-                            <label class="opcion-evento"> 
-                                <input type="checkbox" name="evento" value="infantil">
+
+                        <li>
+                            <label class="opcion-evento">
+
+                                <input
+                                    type="checkbox"
+                                    name="evento"
+                                    value="infantil"
+                                >
+
                                 <span>Infantil</span>
-                            </label> 
+
+                            </label>
                         </li>
-                    </ul> 
-                </section> 
-                <button type="reset" class="boton-limpiar">Limpiar filtros</button>
+
+                    </ul>
+
+                </section>
+
+                <button
+                    type="button"
+                    class="boton-limpiar"
+                    id="limpiar-filtros"
+                >
+                    Limpiar filtros
+                </button>
+
             </aside>
 
-            <!-- GRILLA DE PRODUCTOS --> 
-        <section class="grilla-productos" aria-label="Productos disponibles"> 
-            
-            <!-- PRODUCTO 1 --> 
-            <article class="tarjeta-producto">
-                <input type="checkbox" id="toggle-desc-1" class="check-detalle">
 
-                <div class="vista-normal">
-                    <div class="contenedor-imagen-producto">
-                        <img src="./recursos/imagenes/grilla-productos/Juego de Living Estándar – Capacidad 10 personas 2.jpg" alt="Vista general del Juego de Living Estándar" class="imagen-producto">
-                        <p class="etiqueta-producto">Juego de living estándar</p>
-                    </div>
-                    <div class="informacion-producto">
-                        <h2 class="nombre-producto">Juego de Living Estándar – Capacidad 10 personas</h2> 
-                        
-                        <label for="toggle-desc-1" class="btn-ver-detalle">Ver descripción completa</label>
+            <!-- GRILLA DE PRODUCTOS -->
+            <section
+                class="grilla-productos"
+                id="grilla-productos"
+                aria-label="Productos disponibles"
+                aria-live="polite"
+            >
 
-                        <p class="precio-producto">$40.000,00 <span class="unidad-producto">por unidad</span></p> 
-                        
-                        <div class="controles-producto">
-                            <p class="stock-productos">Stock disponible: 8 unidades</p>
-                            <div class="selector-cantidad"> 
-                                <button type="button" class="boton-cantidad" aria-label="Disminuir cantidad">−</button>
-                                <span class="numero-cantidad">2</span> 
-                                <button type="button" class="boton-cantidad" aria-label="Aumentar cantidad">+</button>
-                            </div> 
-                            <button type="button" class="boton-agregar">Agregar al pedido</button> 
-                        </div>
-                    </div>
+                <!--
+                    Las tarjetas de los productos se generarán
+                    dinámicamente mediante JavaScript.
+                -->
+
+            </section>
+
+
+            <!-- RESUMEN DEL PEDIDO -->
+            <aside class="resumen-pedido" id="resumen-pedido">
+
+                <div class="encabezado-pedido">
+
+                    <h2 class="titulo-pedido">
+                        Tu pedido
+                    </h2>
+
+                    <span
+                        class="cantidad-pedido"
+                        id="cantidad-pedido"
+                    >0</span>
+
                 </div>
 
-                <div class="vista-detalle">
-                    <div class="contenido-detalle">
-                        <h3>Detalle del producto</h3>
-                        <p><strong>Incluye:</strong></p>
-                        <ul>
-                            <li>1 sillón de 1,85 m con respaldo (4 personas).</li>
-                            <li>1 sillón de 1,85 m sin respaldo (4 personas).</li>
-                            <li>1 banqueta de 1,20 m (2 personas).</li>
-                            <li>Almohadones en bases y respaldos.</li>
-                            <li>Mesa de 1,00 x 0,56 m.</li>
-                            <li>Camino y centro de mesa decorativo.</li>
-                        </ul>
-                        <p><strong>No incluye:</strong> traslado ni armado.</p>
-                    </div>
-                    <label for="toggle-desc-1" class="btn-cerrar-detalle">Volver</label>
-                </div>
-            </article>
 
-            <!-- PRODUCTO 2 --> 
-            <article class="tarjeta-producto">
-                <input type="checkbox" id="toggle-desc-2" class="check-detalle">
+                <!-- PRODUCTOS SELECCIONADOS -->
+                <ul class="lista-pedido" id="lista-pedido">
 
-                <div class="vista-normal">
-                    <div class="contenedor-imagen-producto">
-                        <img src="./recursos/imagenes/grilla-productos/Livings Confort.jpg" alt="Vista general del Juego de Living Confort" class="imagen-producto">
-                        <p class="etiqueta-producto">Juego de Living Confort</p>
-                    </div>
-                    <div class="informacion-producto">
-                        <h2 class="nombre-producto">Juego de Livings Confort – Capacidad 10 personas</h2> 
-                        
-                        <label for="toggle-desc-2" class="btn-ver-detalle">Ver descripción completa</label>
+                    <!-- JavaScript insertará los productos seleccionados. -->
 
-                        <p class="precio-producto">$46.000,00 <span class="unidad-producto">por unidad</span></p> 
-                        
-                        <div class="controles-producto"> 
-                            <p class="stock-productos">Stock disponible: 8 unidades</p>
-                            <div class="selector-cantidad"> 
-                                <button type="button" class="boton-cantidad" aria-label="Disminuir cantidad">−</button>
-                                <span class="numero-cantidad">2</span> 
-                                <button type="button" class="boton-cantidad" aria-label="Aumentar cantidad">+</button>
-                            </div> 
-                            <button type="button" class="boton-agregar">Agregar al pedido</button> 
-                        </div>
-                    </div>
-                </div>
-
-                <div class="vista-detalle">
-                    <div class="contenido-detalle">
-                        <h3>Detalle del producto</h3>
-                        <p><strong>Incluye:</strong></p>
-                        <ul>
-                            <li>2 sillones de 1,85 m con respaldo (4 personas cada uno).</li>
-                            <li>1 banqueta de 1,00 m (2 personas).</li>
-                            <li>Almohadones en bases y respaldos.</li>
-                            <li>1 mesa de 1,00 x 0,56 m.</li>
-                            <li>Camino y centro de mesa decorativo.</li>
-                        </ul>
-                        <p><strong>No incluye:</strong> traslado ni armado.</p>
-                    </div>
-                    <label for="toggle-desc-2" class="btn-cerrar-detalle">Volver</label>
-                </div>
-            </article>
-
-            <!-- PRODUCTO 3 --> 
-            <article class="tarjeta-producto">
-                <input type="checkbox" id="toggle-desc-3" class="check-detalle">
-
-                <div class="vista-normal">
-                    <div class="contenedor-imagen-producto">
-                        <img src="./recursos/imagenes/grilla-productos/Juego de Living Premium – Capacidad 12 personas.jpg" alt="Vista general del Juego de Living premium" class="imagen-producto">
-                        <p class="etiqueta-producto">Juego de Living Premium</p>
-                    </div>
-                    <div class="informacion-producto">
-                        <h2 class="nombre-producto">Juego de Living Premium – Capacidad 12 personas</h2> 
-                        
-                        <label for="toggle-desc-3" class="btn-ver-detalle">Ver descripción completa</label>
-
-                        <p class="precio-producto">$52.000,00 <span class="unidad-producto">por unidad</span></p> 
-                        
-                        <div class="controles-producto"> 
-                            <p class="stock-productos">Stock disponible: 20 unidades</p>
-                            <div class="selector-cantidad"> 
-                                <button type="button" class="boton-cantidad" aria-label="Disminuir cantidad">−</button>
-                                <span class="numero-cantidad">2</span> 
-                                <button type="button" class="boton-cantidad" aria-label="Aumentar cantidad">+</button>
-                            </div> 
-                            <button type="button" class="boton-agregar">Agregar al pedido</button> 
-                        </div>
-                    </div>
-                </div>
-
-                <div class="vista-detalle">
-                    <div class="contenido-detalle">
-                        <h3>Detalle del producto</h3>
-                        <p><strong>Incluye:</strong></p>
-                        <ul>
-                            <li>2 sillones de 1,30 m con respaldo (3 personas cada uno)</li>
-                            <li>2 sillones de 1,30 m sin respaldo (3 personas cada uno)</li>
-                            <li>1 mesa de 0,80 x 0,80 m</li>
-                            <li>Almohadones en bases y respaldos.</li>
-                            <li>Camino y centro de mesa decorativo.</li>
-                        </ul>
-                        <p><strong>No incluye:</strong> traslado ni armado.</p>
-                    </div>
-                    <label for="toggle-desc-3" class="btn-cerrar-detalle">Volver</label>
-                </div>
-            </article>
-
-        </section>
-
-            <!-- RESUMEN DEL PEDIDO --> 
-            <aside class="resumen-pedido" id="resumen-pedido"> 
-                <div class="encabezado-pedido"> 
-                    <h2 class="titulo-pedido">Tu pedido</h2> 
-                    <span class="cantidad-pedido">1</span> 
-                </div> 
-                <ul class="lista-pedido">
-                    <!-- Producto agregado 1 --> 
-                    <li class="producto-pedido"> 
-                        <img src="./recursos/imagenes/grilla-productos/Juego de Living Premium – Capacidad 12 personas.jpg" alt="Juego de Living Premium" class="imagen-pedido"> 
-                        <div class="detalle-pedido"> 
-                            <h3 class="nombre-pedido">Juego de Living Premium</h3> 
-                            <p class="cantidad-producto-pedido">5 unidades</p>
-                            <p class="precio-producto-pedido">$52.000</p>
-                        </div>
-                        <button type="button" class="boton-eliminar" aria-label="Eliminar producto del pedido">×</button> 
-                    </li> 
                 </ul>
 
-                <!-- Total del pedido --> 
-                <div class="total-pedido">
-                    <span class="texto-total">Subtotal</span> 
-                    <strong class="importe-total">$260.000</strong> 
-                </div> 
-                <p class="aclaracion-pedido">Los importes son orientativos y están sujetos a disponibilidad.</p> 
-                <a href="cotizacion.html" class="boton-confirmar" style="display: block; text-align: center; text-decoration: none;">Ver pedido</a> 
-                <p class="mensaje-pedido">Revisá los productos y las cantidades antes de continuar.</p>
-            </aside> 
-        </div> 
-    </main> 
 
+                <!-- TOTAL -->
+                <div class="total-pedido">
+
+                    <span class="texto-total">
+                        Subtotal
+                    </span>
+
+                    <strong
+                        class="importe-total"
+                        id="importe-total"
+                    >
+                        $0
+                    </strong>
+
+                </div>
+
+                <p class="aclaracion-pedido">
+                    Los importes son orientativos y están sujetos a disponibilidad.
+                </p>
+
+                <a
+                    href="./cotizacion.html"
+                    class="boton-confirmar"
+                    id="ver-pedido"
+                    style="display: block; text-align: center; text-decoration: none;"
+                >
+                    Ver pedido
+                </a>
+
+                <p class="mensaje-pedido">
+                    Revisá los productos y las cantidades antes de continuar.
+                </p>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
     <footer class="pie">
+
         <div class="pie-contenido">
-            <!-- Columna 1: logo y copyright -->
+
+            <!-- LOGO Y COPYRIGHT -->
             <div>
-                <img src="./recursos/imagenes/logo.png" alt="logo de mola, solo letras" width="100">
-                <p>&copy; 2026 Mola Eventos. Todos los derechos reservados.</p>
+
+                <img
+                    src="./recursos/imagenes/logo.png"
+                    alt="Logo de Mola Eventos"
+                    width="100"
+                >
+
+                <p>
+                    &copy; 2026 Mola Eventos. Todos los derechos reservados.
+                </p>
+
             </div>
-            <!-- Columna 2: Navegación -->
+
+
+            <!-- NAVEGACIÓN -->
             <div>
+
                 <h3>Navegación</h3>
+
                 <ul>
                     <li><a href="./index.html">Inicio</a></li>
                     <li><a href="./catalogo.html">Catálogo</a></li>
@@ -306,16 +408,30 @@
                     <li><a href="./sobre-nosotros.html">Sobre nosotros</a></li>
                     <li><a href="./contacto.html">Contacto</a></li>
                 </ul>
+
             </div>
-            <!-- Columna 3: contacto -->
+
+
+            <!-- CONTACTO -->
             <div>
+
                 <h3>Contacto</h3>
+
                 <p>3517027534</p>
-                <p>Instagram/ Facebook: @molaeventos.cba</p>
+                <p>Instagram / Facebook: @molaeventos.cba</p>
                 <p>livingsmola@gmail.com</p>
                 <p>Córdoba, Argentina</p>
+
             </div>
+
         </div>
+
     </footer>
+
+
+    <!-- JAVASCRIPT DEL CATÁLOGO -->
+    <script type="module" src="./js/catalogo.js"></script>
+
 </body>
+
 </html>
