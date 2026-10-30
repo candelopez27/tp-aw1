@@ -5,10 +5,6 @@
 
 import { productos } from "./datos/productos.js";
 
-// =====================================================
-// 1. ELEMENTOS DEL HTML
-// =====================================================
-
 const grillaProductos = document.getElementById("grilla-productos");
 const campoBusqueda = document.getElementById("buscar-producto");
 const precioMinimo = document.getElementById("precio-minimo");
@@ -23,10 +19,6 @@ const cantidadPedido = document.getElementById("cantidad-pedido");
 const importeTotal = document.getElementById("importe-total");
 const cantidadCategoria = document.getElementById("cantidad-categoria");
 
-// =====================================================
-// 2. ESTADO DEL CATÁLOGO
-// =====================================================
-
 // Categoría seleccionada actualmente.
 let categoriaSeleccionada = "todas";
 
@@ -34,10 +26,6 @@ let categoriaSeleccionada = "todas";
 // Cada elemento tendrá el id del producto y la cantidad elegida.
 let pedido = JSON.parse(localStorage.getItem("pedidoMola")) || [];
 
-
-// =====================================================
-// 3. FUNCIONES AUXILIARES
-// =====================================================
 
 // Formatea un importe como moneda argentina.
 function formatearPrecio(precio) {
@@ -60,10 +48,6 @@ function guardarPedido() {
     localStorage.setItem("pedidoMola", JSON.stringify(pedido));
 }
 
-
-// =====================================================
-// 4. GENERAR UNA TARJETA DE PRODUCTO
-// =====================================================
 
 function crearTarjeta(producto) {
     const tarjeta = document.createElement("article");
@@ -205,10 +189,6 @@ function crearTarjeta(producto) {
 }
 
 
-// =====================================================
-// 5. RENDERIZAR EL CATÁLOGO
-// =====================================================
-
 function mostrarProductos(listaProductos) {
     grillaProductos.innerHTML = "";
 
@@ -229,10 +209,6 @@ function mostrarProductos(listaProductos) {
     });
 }
 
-
-// =====================================================
-// 6. FILTRAR PRODUCTOS
-// =====================================================
 
 function filtrarProductos() {
     const textoBusqueda = campoBusqueda.value
@@ -282,10 +258,6 @@ function filtrarProductos() {
 }
 
 
-// =====================================================
-// 7. CAMBIAR LA CANTIDAD SELECCIONADA
-// =====================================================
-
 function cambiarCantidad(id, accion) {
     const producto = buscarProductoPorId(id);
     const elementoCantidad = document.getElementById(`cantidad-${id}`);
@@ -307,3 +279,210 @@ function cambiarCantidad(id, accion) {
     elementoCantidad.textContent = cantidad;
 }
 
+function agregarAlPedido(id) {
+    const producto = buscarProductoPorId(id);
+    const elementoCantidad = document.getElementById(`cantidad-${id}`);
+
+    if (!producto || !elementoCantidad) {
+        return;
+    }
+
+    const cantidadSeleccionada = Number(elementoCantidad.textContent);
+
+    const productoExistente = pedido.find(
+        item => item.id === producto.id
+    );
+
+    const cantidadActual = productoExistente
+        ? productoExistente.cantidad
+        : 0;
+
+    if (cantidadActual + cantidadSeleccionada > producto.stock) {
+        alert(
+            `Solo hay ${producto.stock} unidades disponibles de ${producto.etiqueta}.`
+        );
+
+        return;
+    }
+
+    if (productoExistente) {
+        productoExistente.cantidad += cantidadSeleccionada;
+    } else {
+        pedido.push({
+            id: producto.id,
+            cantidad: cantidadSeleccionada
+        });
+    }
+
+    guardarPedido();
+    mostrarPedido();
+
+    alert(`${producto.etiqueta} se agregó al pedido.`);
+}
+
+
+function mostrarPedido() {
+    listaPedido.innerHTML = "";
+
+    let total = 0;
+    let cantidadTotal = 0;
+
+    // Elimina del pedido los productos que ya no existen en los datos.
+    pedido = pedido.filter(item => buscarProductoPorId(item.id));
+
+    pedido.forEach(item => {
+        const producto = buscarProductoPorId(item.id);
+
+        if (!producto) {
+            return;
+        }
+
+        const subtotal = producto.precio * item.cantidad;
+
+        total += subtotal;
+        cantidadTotal += item.cantidad;
+
+        const elemento = document.createElement("li");
+
+        elemento.classList.add("producto-pedido");
+
+        elemento.innerHTML = `
+            <img
+                src="${producto.imagen}"
+                alt="${producto.alt}"
+                class="imagen-pedido"
+            >
+
+            <div class="detalle-pedido">
+
+                <h3 class="nombre-pedido">
+                    ${producto.etiqueta}
+                </h3>
+
+                <p class="cantidad-producto-pedido">
+                    ${item.cantidad} unidades
+                </p>
+
+                <p class="precio-producto-pedido">
+                    ${formatearPrecio(subtotal)}
+                </p>
+
+            </div>
+
+            <button
+                type="button"
+                class="boton-eliminar"
+                data-eliminar="${producto.id}"
+                aria-label="Eliminar ${producto.etiqueta} del pedido"
+            >
+                ×
+            </button>
+        `;
+
+        listaPedido.appendChild(elemento);
+    });
+
+    cantidadPedido.textContent = cantidadTotal;
+    importeTotal.textContent = formatearPrecio(total);
+
+    guardarPedido();
+}
+
+
+grillaProductos.addEventListener("click", evento => {
+
+    const botonCantidad = evento.target.closest(".boton-cantidad");
+
+    if (botonCantidad) {
+        cambiarCantidad(
+            botonCantidad.dataset.id,
+            botonCantidad.dataset.accion
+        );
+
+        return;
+    }
+
+    const botonAgregar = evento.target.closest(".boton-agregar");
+
+    if (botonAgregar) {
+        agregarAlPedido(botonAgregar.dataset.id);
+    }
+});
+
+
+listaPedido.addEventListener("click", evento => {
+
+    const botonEliminar = evento.target.closest("[data-eliminar]");
+
+    if (!botonEliminar) {
+        return;
+    }
+
+    const id = Number(botonEliminar.dataset.eliminar);
+
+    pedido = pedido.filter(item => item.id !== id);
+
+    guardarPedido();
+    mostrarPedido();
+});
+
+
+// Buscar por nombre.
+campoBusqueda.addEventListener("input", filtrarProductos);
+
+// Filtrar por precio.
+precioMinimo.addEventListener("input", filtrarProductos);
+precioMaximo.addEventListener("input", filtrarProductos);
+
+// Filtrar por tipo de evento.
+eventos.forEach(evento => {
+    evento.addEventListener("change", filtrarProductos);
+});
+
+// Filtrar por categoría.
+categorias.forEach(categoria => {
+
+    categoria.addEventListener("click", evento => {
+        evento.preventDefault();
+
+        categoriaSeleccionada = categoria.dataset.categoria;
+
+        categorias.forEach(enlace => {
+            enlace.classList.remove("categoria-activa");
+        });
+
+        categoria.classList.add("categoria-activa");
+
+        filtrarProductos();
+    });
+});
+
+
+botonLimpiar.addEventListener("click", () => {
+
+    campoBusqueda.value = "";
+    precioMinimo.value = "";
+    precioMaximo.value = "";
+
+    eventos.forEach(evento => {
+        evento.checked = false;
+    });
+
+    categoriaSeleccionada = "todas";
+
+    categorias.forEach(categoria => {
+        categoria.classList.remove("categoria-activa");
+    });
+
+    document.querySelector(
+        '[data-categoria="todas"]'
+    ).classList.add("categoria-activa");
+
+    filtrarProductos();
+});
+
+
+cantidadCategoria.textContent = productos.length;
+
+filtrarProductos();
+mostrarPedido();
