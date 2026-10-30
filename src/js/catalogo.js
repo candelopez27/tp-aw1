@@ -24,7 +24,59 @@ let categoriaSeleccionada = "todas";
 
 // Productos agregados al pedido.
 // Cada elemento tendrá el id del producto y la cantidad elegida.
-let pedido = JSON.parse(localStorage.getItem("pedidoMola")) || [];
+function cargarPedido() {
+    const pedidoGuardado = localStorage.getItem("pedidoMola");
+
+    if (!pedidoGuardado) {
+        return [];
+    }
+
+    let pedidoParseado;
+
+    try {
+        pedidoParseado = JSON.parse(pedidoGuardado);
+    } catch (error) {
+        console.error(
+            "No se pudo leer el pedido guardado. Se iniciará un pedido vacío.",
+            error
+        );
+
+        return [];
+    }
+
+    if (!Array.isArray(pedidoParseado)) {
+        console.error(
+            "El pedido guardado tiene un formato inválido. Se iniciará un pedido vacío."
+        );
+
+        return [];
+    }
+
+    const pedidoValido = pedidoParseado.filter(item => {
+        if (
+            !item ||
+            !Number.isInteger(item.id) ||
+            !Number.isInteger(item.cantidad) ||
+            item.cantidad < 1
+        ) {
+            return false;
+        }
+
+        const producto = buscarProductoPorId(item.id);
+
+        return producto && item.cantidad <= producto.stock;
+    });
+
+    if (pedidoValido.length !== pedidoParseado.length) {
+        console.warn(
+            "Se descartaron elementos inválidos del pedido guardado."
+        );
+    }
+
+    return pedidoValido;
+}
+
+let pedido = cargarPedido();
 
 
 // Formatea un importe como moneda argentina.
